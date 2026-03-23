@@ -1,0 +1,497 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0A0A0A;
+  --dark:#1A1A1A;
+  --white:#FFFFFF;
+  --blue:#1574F6;
+  --blue-dark:#0D5ED4;
+  --gray:#E5E5E5;
+  --gray-mid:#888;
+  --gray-text:#AAAAAA;
+}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);width:100%;overflow-x:hidden}
+
+/* ── PROMO BANNER ── */
+.promo-bar{background:var(--blue);padding:0.45rem 0;overflow:hidden}
+.promo-track{display:flex;gap:3rem;animation:promo 25s linear infinite;white-space:nowrap}
+.promo-item{font-size:0.72rem;font-weight:500;color:var(--white);letter-spacing:1px}
+.promo-sep{color:rgba(255,255,255,0.4)}
+@keyframes promo{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── HEADER ── */
+header{background:var(--black);border-bottom:1px solid #222;position:sticky;top:0;z-index:100}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem}
+.logo-wrap{display:flex;align-items:center;gap:0}
+.nav-main{display:flex;align-items:center;gap:0.25rem}
+.nav-main a{color:var(--gray-text);text-decoration:none;font-size:0.78rem;font-weight:400;padding:0.5rem 0.9rem;border-radius:4px;transition:color 0.2s,background 0.2s;display:flex;align-items:center;gap:4px}
+.nav-main a:hover{color:var(--white);background:#1e1e1e}
+.nav-actions{display:flex;align-items:center;gap:0.75rem}
+.btn-call{background:var(--blue);color:var(--white);border:none;padding:0.55rem 1.2rem;border-radius:6px;font-size:0.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:0.5px}
+.btn-call:hover{background:var(--blue-dark)}
+.search-box{display:flex;align-items:center;background:#1e1e1e;border:1px solid #333;border-radius:6px;padding:0.4rem 0.75rem;gap:8px}
+.search-box input{background:none;border:none;outline:none;color:var(--white);font-size:0.78rem;width:160px;font-family:'Inter',sans-serif}
+.search-box input::placeholder{color:#555}
+.search-icon{color:#555;font-size:0.85rem}
+.cart-btn{background:#1e1e1e;border:1px solid #333;color:var(--white);padding:0.5rem 0.75rem;border-radius:6px;cursor:pointer;font-size:0.85rem;position:relative}
+.cart-badge{position:absolute;top:-5px;right:-5px;background:var(--blue);color:var(--white);font-size:0.55rem;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+/* ── HERO ── */
+.hero{background:var(--black);padding:4rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;border-bottom:1px solid #1a1a1a}
+.hero-tag{display:inline-block;background:rgba(21,116,246,0.15);border:1px solid rgba(21,116,246,0.35);color:var(--blue);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:1.5rem}
+.hero-title{font-family:'Syne',sans-serif;font-size:3.2rem;font-weight:800;line-height:1.05;margin-bottom:1rem;color:var(--white)}
+.hero-title span{color:var(--blue)}
+.hero-sub{font-size:0.88rem;color:var(--gray-text);line-height:1.8;margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-blue{background:var(--blue);color:var(--white);border:none;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-outline{background:transparent;color:var(--white);border:1px solid #333;padding:0.8rem 1.8rem;border-radius:8px;font-size:0.82rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif}
+.hero-right{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-card{background:#111;border:1px solid #222;border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.5rem}
+.hero-card-icon{font-size:2rem;margin-bottom:0.25rem}
+.hero-card-name{font-size:0.75rem;font-weight:600;color:var(--white)}
+.hero-card-price{font-size:0.7rem;color:var(--blue);font-weight:500}
+.hero-card.featured{grid-column:span 2;background:linear-gradient(135deg,#0D1B3E,#111);border-color:#1574F6;flex-direction:row;gap:1.5rem;text-align:left;padding:1.25rem 1.5rem}
+.hero-card.featured .hero-card-icon{font-size:2.5rem}
+
+/* ── SECTION WRAPPER ── */
+.sec{padding:3.5rem 2.5rem;border-bottom:1px solid #1f1f1f}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.sec-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;color:var(--white)}
+.sec-title span{color:var(--blue)}
+.sec-link{font-size:0.75rem;color:var(--blue);font-weight:500;cursor:pointer;text-decoration:none}
+.sec-sub{font-size:0.78rem;color:var(--gray-text);margin-top:0.25rem}
+
+/* ── PRODUCT GRID ── */
+.prod-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.prod-card{background:#111;border:1px solid #1f1f1f;border-radius:10px;overflow:hidden;transition:border-color 0.25s,transform 0.2s;cursor:pointer}
+.prod-card:hover{border-color:#1574F6;transform:translateY(-2px)}
+.prod-img{height:160px;display:flex;align-items:center;justify-content:center;background:#0f0f0f;position:relative}
+.prod-badge{position:absolute;top:10px;left:10px;font-size:0.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px}
+.badge-new{background:var(--blue);color:var(--white)}
+.badge-promo{background:#E53935;color:var(--white)}
+.badge-stock{background:#1a1a1a;color:var(--gray-text);border:1px solid #333}
+.prod-body{padding:1rem}
+.prod-brand{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray-text);margin-bottom:3px}
+.prod-name{font-size:0.85rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;line-height:1.3}
+.prod-price-row{display:flex;align-items:center;gap:8px;margin-bottom:0.75rem}
+.prod-price{font-size:1rem;font-weight:700;color:var(--blue)}
+.prod-old{font-size:0.75rem;color:var(--gray-mid);text-decoration:line-through}
+.prod-discount{font-size:0.65rem;color:#4CAF50;font-weight:600}
+.prod-cta{width:100%;background:var(--blue);color:var(--white);border:none;padding:0.6rem;border-radius:6px;font-size:0.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+.prod-cta:hover{background:var(--blue-dark)}
+
+/* Phone SVG styles */
+.phone-svg{width:80px;height:auto;filter:drop-shadow(0 8px 24px rgba(21,116,246,0.3))}
+.phone-svg-sm{width:60px;height:auto}
+
+/* ── TROC ── */
+.troc{background:#0A0A0A;padding:3.5rem 2.5rem;border-bottom:1px solid #1f1f1f}
+.troc-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.troc-process{display:flex;flex-direction:column;gap:0}
+.troc-step{display:flex;align-items:flex-start;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid #1f1f1f;position:relative}
+.troc-step:last-child{border-bottom:none}
+.step-ico{width:44px;height:44px;background:rgba(21,116,246,0.12);border:1px solid rgba(21,116,246,0.25);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.step-content{}
+.step-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:3px;font-weight:600}
+.step-title{font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:3px}
+.step-desc{font-size:0.78rem;color:var(--gray-text);line-height:1.6}
+.troc-right{}
+.troc-badge-tag{display:inline-block;background:rgba(21,116,246,0.12);border:1px solid rgba(21,116,246,0.25);color:var(--blue);font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:1rem}
+.troc-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;line-height:1.1;margin-bottom:1rem;color:var(--white)}
+.troc-title span{color:var(--blue)}
+.troc-desc{font-size:0.85rem;color:var(--gray-text);line-height:1.8;margin-bottom:1.75rem}
+.troc-cta{background:var(--blue);color:var(--white);border:none;padding:0.85rem 2rem;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+
+/* ── FOOTER ── */
+footer{background:var(--black);padding:3rem 2.5rem 1.5rem;border-top:1px solid #1f1f1f}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-brand p{font-size:0.82rem;color:var(--gray-text);line-height:1.8;margin-top:1rem;max-width:260px;font-weight:300}
+.footer-col h4{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:1rem;font-weight:600}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-col ul li a{font-size:0.78rem;color:var(--gray-text);text-decoration:none;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--blue)}
+.footer-bottom{border-top:1px solid #1f1f1f;padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:0.7rem;color:#555}
+.footer-slogan{font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:#444}
+
+/* ── CONTACT FLOAT ── */
+.contact-float{position:fixed;bottom:2rem;right:2rem;z-index:200;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.float-btn{display:flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);border:none;padding:0.7rem 1.25rem;border-radius:50px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 4px 20px rgba(21,116,246,0.4)}
+.float-btn-wa{background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
+</style>
+
+<!-- PROMO BANNER -->
+<div class="promo-bar">
+  <div class="promo-track">
+    <span class="promo-item">🔥 iPhone 15 Pro — Promo spéciale : 580 000 FCFA</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">✦ Ray-Ban Meta disponible en stock</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">📦 Troc accepté — Évaluez votre téléphone gratuitement</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">🔧 Réparation iPhone express — Cotonou Akpakpa PK3</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">🔥 iPhone 15 Pro — Promo spéciale : 580 000 FCFA</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">✦ Ray-Ban Meta disponible en stock</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">📦 Troc accepté — Évaluez votre téléphone gratuitement</span>
+    <span class="promo-sep">|</span>
+    <span class="promo-item">🔧 Réparation iPhone express — Cotonou Akpakpa PK3</span>
+    <span class="promo-sep">|</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="logo-wrap">
+      <svg width="88" height="42" viewBox="0 0 88 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="87" height="41" rx="4" stroke="#1574F6" stroke-width="1"/>
+        <text x="44" y="18" text-anchor="middle" font-family="'Syne','Inter',sans-serif" font-size="13" font-weight="800" fill="#FFFFFF" letter-spacing="5">GOE</text>
+        <line x1="12" y1="23" x2="76" y2="23" stroke="#1574F6" stroke-width="0.75"/>
+        <text x="44" y="34" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5.5" fill="#888888" letter-spacing="3" font-weight="400">APPLE STORE</text>
+      </svg>
+    </div>
+    <nav class="nav-main">
+      <a href="#">Accueil</a>
+      <a href="#">Électroniques ▾</a>
+      <a href="#">Accessoires ▾</a>
+      <a href="#">Électroménager ▾</a>
+      <a href="#">Troc</a>
+      <a href="#">Réparation</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Rechercher un produit...">
+      </div>
+      <button class="cart-btn">🛒<span class="cart-badge">3</span></button>
+      <button class="btn-call">📞 Appeler</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag">Cotonou · Akpakpa PK3</div>
+    <h1 class="hero-title">La tech premium<br>au cœur de<br><span>Cotonou</span></h1>
+    <p class="hero-sub">iPhone, Samsung, Ray-Ban Meta, accessoires et luminaires. Troc accepté. Réparation express.</p>
+    <div class="hero-btns">
+      <button class="btn-blue">Voir les produits</button>
+      <button class="btn-outline">Estimer mon tél</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card featured">
+      <svg class="phone-svg" viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="76" height="156" rx="14" fill="#1A1A1A" stroke="#333" stroke-width="1.5"/>
+        <rect x="8" y="10" width="64" height="136" rx="10" fill="#0D0D0D"/>
+        <rect x="22" y="5" width="36" height="6" rx="3" fill="#111"/>
+        <rect x="10" y="12" width="60" height="130" rx="8" fill="#1574F6" opacity="0.08"/>
+        <circle cx="40" cy="77" r="18" fill="#1574F6" opacity="0.15"/>
+        <text x="40" y="82" text-anchor="middle" font-size="18" fill="#1574F6">📱</text>
+        <rect x="28" y="148" width="24" height="4" rx="2" fill="#333"/>
+      </svg>
+      <div>
+        <div class="prod-brand">Apple</div>
+        <div class="hero-card-name" style="font-size:0.95rem">iPhone 16 Pro Max</div>
+        <div class="hero-card-price" style="font-size:1rem;font-weight:700">680 000 FCFA</div>
+        <div style="font-size:0.7rem;color:#555;margin-top:2px;text-decoration:line-through">750 000 FCFA</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <svg class="phone-svg-sm" viewBox="0 0 70 140" fill="none">
+        <rect x="2" y="2" width="66" height="136" rx="12" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/>
+        <rect x="7" y="8" width="56" height="120" rx="8" fill="#0D0D0D"/>
+        <text x="35" y="72" text-anchor="middle" font-size="22" fill="#888">📱</text>
+      </svg>
+      <div class="hero-card-name">iPhone 15</div>
+      <div class="hero-card-price">420 000 FCFA</div>
+    </div>
+    <div class="hero-card">
+      <span style="font-size:2rem">🕶</span>
+      <div class="hero-card-name">Ray-Ban Meta</div>
+      <div class="hero-card-price">185 000 FCFA</div>
+    </div>
+  </div>
+</section>
+
+<!-- IPHONES EN STOCK -->
+<section class="sec">
+  <div class="sec-head">
+    <div>
+      <div class="sec-title">iPhone en <span>stock</span></div>
+      <div class="sec-sub">Produits Apple authentiques · Garantie incluse</div>
+    </div>
+    <a class="sec-link">Voir tout →</a>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card">
+      <div class="prod-img">
+        <span class="prod-badge badge-new">Nouveau</span>
+        <svg width="70" height="130" viewBox="0 0 70 130" fill="none"><rect x="2" y="2" width="66" height="126" rx="12" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="56" height="110" rx="8" fill="#0a0a0a"/><rect x="24" y="4" width="22" height="5" rx="2.5" fill="#111"/><circle cx="35" cy="63" r="14" fill="#1574F6" opacity="0.12"/><text x="35" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Apple</div>
+        <div class="prod-name">iPhone 16 Pro Max</div>
+        <div class="prod-price-row"><span class="prod-price">680 000 F</span><span class="prod-old">750 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img">
+        <span class="prod-badge badge-promo">−12%</span>
+        <svg width="70" height="130" viewBox="0 0 70 130" fill="none"><rect x="2" y="2" width="66" height="126" rx="12" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="56" height="110" rx="8" fill="#0a0a0a"/><rect x="24" y="4" width="22" height="5" rx="2.5" fill="#111"/><text x="35" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Apple</div>
+        <div class="prod-name">iPhone 16 Pro</div>
+        <div class="prod-price-row"><span class="prod-price">580 000 F</span><span class="prod-old">660 000 F</span><span class="prod-discount">−12%</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img">
+        <svg width="70" height="130" viewBox="0 0 70 130" fill="none"><rect x="2" y="2" width="66" height="126" rx="12" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="56" height="110" rx="8" fill="#0a0a0a"/><rect x="26" y="4" width="18" height="5" rx="2.5" fill="#111"/><text x="35" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Apple</div>
+        <div class="prod-name">iPhone 15</div>
+        <div class="prod-price-row"><span class="prod-price">420 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img">
+        <span class="prod-badge badge-stock">En stock</span>
+        <svg width="70" height="130" viewBox="0 0 70 130" fill="none"><rect x="2" y="2" width="66" height="126" rx="12" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="56" height="110" rx="8" fill="#0a0a0a"/><rect x="26" y="4" width="18" height="5" rx="2.5" fill="#111"/><text x="35" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Apple</div>
+        <div class="prod-name">iPhone 14</div>
+        <div class="prod-price-row"><span class="prod-price">340 000 F</span><span class="prod-old">380 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMSUNG EN STOCK -->
+<section class="sec" style="background:#0D0D0D">
+  <div class="sec-head">
+    <div>
+      <div class="sec-title">Samsung <span>Galaxy</span></div>
+      <div class="sec-sub">Les derniers modèles Samsung disponibles</div>
+    </div>
+    <a class="sec-link">Voir tout →</a>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card">
+      <div class="prod-img">
+        <span class="prod-badge badge-new">Nouveau</span>
+        <svg width="65" height="128" viewBox="0 0 65 128" fill="none"><rect x="2" y="2" width="61" height="124" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="51" height="108" rx="7" fill="#0a0a0a"/><circle cx="32" cy="8" r="3" fill="#111"/><text x="32" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Samsung</div>
+        <div class="prod-name">Galaxy S25 Ultra</div>
+        <div class="prod-price-row"><span class="prod-price">720 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img">
+        <span class="prod-badge badge-promo">−8%</span>
+        <svg width="65" height="128" viewBox="0 0 65 128" fill="none"><rect x="2" y="2" width="61" height="124" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="51" height="108" rx="7" fill="#0a0a0a"/><circle cx="32" cy="8" r="3" fill="#111"/><text x="32" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Samsung</div>
+        <div class="prod-name">Galaxy S24</div>
+        <div class="prod-price-row"><span class="prod-price">460 000 F</span><span class="prod-old">500 000 F</span><span class="prod-discount">−8%</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img">
+        <svg width="65" height="128" viewBox="0 0 65 128" fill="none"><rect x="2" y="2" width="61" height="124" rx="10" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="8" width="51" height="108" rx="7" fill="#0a0a0a"/><circle cx="32" cy="8" r="3" fill="#111"/><text x="32" y="68" text-anchor="middle" font-size="16" fill="#aaa">📱</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Samsung</div>
+        <div class="prod-name">Galaxy A55</div>
+        <div class="prod-price-row"><span class="prod-price">220 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img">
+        <svg width="65" height="60" viewBox="0 0 65 60" fill="none"><rect x="2" y="2" width="61" height="56" rx="8" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1.5"/><rect x="7" y="7" width="51" height="46" rx="5" fill="#0a0a0a"/><text x="32" y="35" text-anchor="middle" font-size="16" fill="#aaa">💻</text></svg>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Samsung</div>
+        <div class="prod-name">Galaxy Tab S9</div>
+        <div class="prod-price-row"><span class="prod-price">380 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAY-BAN & LUMINAIRES -->
+<section class="sec">
+  <div class="sec-head">
+    <div><div class="sec-title">Électroniques & <span>Luminaires</span></div></div>
+    <a class="sec-link">Voir tout →</a>
+  </div>
+  <div class="prod-grid">
+    <div class="prod-card">
+      <div class="prod-img" style="background:#0f0f0f">
+        <span class="prod-badge badge-new">Exclusif</span>
+        <span style="font-size:3rem">🕶</span>
+      </div>
+      <div class="prod-body">
+        <div class="prod-brand">Ray-Ban × Meta</div>
+        <div class="prod-name">Smart Glasses 2024</div>
+        <div class="prod-price-row"><span class="prod-price">185 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img"><span style="font-size:3rem">💡</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Smart Home</div>
+        <div class="prod-name">Luminaire LED déco</div>
+        <div class="prod-price-row"><span class="prod-price">35 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img"><span style="font-size:3rem">🔊</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Audio</div>
+        <div class="prod-name">AirPods Pro 2</div>
+        <div class="prod-price-row"><span class="prod-price">95 000 F</span><span class="prod-old">110 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img"><span style="font-size:3rem">⌚</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Apple</div>
+        <div class="prod-name">Apple Watch Series 9</div>
+        <div class="prod-price-row"><span class="prod-price">195 000 F</span></div>
+        <button class="prod-cta">Acheter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TROC -->
+<section class="troc">
+  <div class="troc-inner">
+    <div class="troc-right">
+      <span class="troc-badge-tag">Programme GOE</span>
+      <h2 class="troc-title">Échangez votre tél,<br>repartez avec un <span>neuf</span></h2>
+      <p class="troc-desc">Apportez votre ancien smartphone chez GOE. Nos techniciens l'évaluent gratuitement et vous déduisent sa valeur sur votre prochain achat. Rapide, honnête, sans surprise.</p>
+      <button class="troc-cta">Estimer mon téléphone gratuitement</button>
+    </div>
+    <div class="troc-process">
+      <div class="troc-step">
+        <div class="step-ico">📱</div>
+        <div class="step-content">
+          <div class="step-label">Étape 01</div>
+          <div class="step-title">Amenez votre téléphone</div>
+          <div class="step-desc">Rendez-vous en boutique à Akpakpa PK3, Cotonou avec votre ancien smartphone.</div>
+        </div>
+      </div>
+      <div class="troc-step">
+        <div class="step-ico">🔍</div>
+        <div class="step-content">
+          <div class="step-label">Étape 02</div>
+          <div class="step-title">Évaluation gratuite</div>
+          <div class="step-desc">Notre technicien inspecte et évalue votre téléphone en 15 minutes, sans engagement.</div>
+        </div>
+      </div>
+      <div class="troc-step">
+        <div class="step-ico">💰</div>
+        <div class="step-content">
+          <div class="step-label">Étape 03</div>
+          <div class="step-title">Crédit immédiat</div>
+          <div class="step-desc">La valeur est déduite directement du prix de votre nouveau téléphone.</div>
+        </div>
+      </div>
+      <div class="troc-step">
+        <div class="step-ico">✅</div>
+        <div class="step-content">
+          <div class="step-label">Étape 04</div>
+          <div class="step-title">Repartez avec votre neuf</div>
+          <div class="step-desc">Payez seulement la différence et repartez avec votre nouveau smartphone.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <svg width="88" height="42" viewBox="0 0 88 42" fill="none">
+        <rect x="0.5" y="0.5" width="87" height="41" rx="4" stroke="#1574F6" stroke-width="1"/>
+        <text x="44" y="18" text-anchor="middle" font-family="'Syne','Inter',sans-serif" font-size="13" font-weight="800" fill="#FFFFFF" letter-spacing="5">GOE</text>
+        <line x1="12" y1="23" x2="76" y2="23" stroke="#1574F6" stroke-width="0.75"/>
+        <text x="44" y="34" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5.5" fill="#888888" letter-spacing="3">APPLE STORE</text>
+      </svg>
+      <p>Votre boutique tech de référence à Cotonou. iPhone, Samsung, accessoires, réparation et troc. God Over Everything.</p>
+      <div style="margin-top:1rem;display:flex;gap:8px">
+        <div style="width:34px;height:34px;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer">📘</div>
+        <div style="width:34px;height:34px;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer">📸</div>
+        <div style="width:34px;height:34px;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer">💬</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produits</h4>
+      <ul>
+        <li><a href="#">iPhone</a></li>
+        <li><a href="#">Samsung Galaxy</a></li>
+        <li><a href="#">Ray-Ban Meta</a></li>
+        <li><a href="#">Luminaires</a></li>
+        <li><a href="#">Accessoires</a></li>
+        <li><a href="#">Électroménager</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Réparation iPhone</a></li>
+        <li><a href="#">Programme troc</a></li>
+        <li><a href="#">Évaluation gratuite</a></li>
+        <li><a href="#">Garantie produits</a></li>
+        <li><a href="#">Livraison Cotonou</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">📍 Akpakpa PK3, Rue 1703</a></li>
+        <li><a href="#">📞 01 96 51 87 87</a></li>
+        <li><a href="#">Lun–Sam 8h–20h</a></li>
+        <li><a href="#">À propos de GOE</a></li>
+        <li><a href="#">Politique de retour</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 GOE Apple Store · Cotonou, Bénin</span>
+    <span class="footer-slogan">God Over Everything</span>
+    <span class="footer-copy">Tous droits réservés</span>
+  </div>
+</footer>
+
+<!-- CTA FLOTTANT -->
+<div class="contact-float">
+  <button class="float-btn float-btn-wa">💬 WhatsApp</button>
+  <button class="float-btn">📞 01 96 51 87 87</button>
+</div>
